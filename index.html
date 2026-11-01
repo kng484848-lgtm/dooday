@@ -1,246 +1,190 @@
-<!doctype html><html lang="ko"><head><meta name="color-scheme" content="only light"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:only light}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style><title>dooday 기록 키트</title><meta name="description" content="dooday 기록 키트 — 플래너 세트, 미니 노트, 키링, 풀 세트 구매 문의"><link rel="icon" type="image/png" href="../a/favicon.png"><link rel="apple-touch-icon" href="../a/favicon.png"></head><body>
+<!doctype html><html lang="ko"><head><meta name="color-scheme" content="only light"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:only light}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style><title>dooday 앱</title><meta name="description" content="생각은 모양으로, 감정은 표정으로, 행동은 자세로. 오늘의 나를 그리는 캐릭터 다이어리 dooday."><link rel="icon" type="image/png" href="a/favicon.png"><link rel="apple-touch-icon" href="a/favicon.png"></head><body>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gaegu:wght@400;700&family=IBM+Plex+Sans+KR:wght@400;500;700&display=swap">
 <style>:root{color-scheme:only light}html,body{background:#fff}
 :root{
 --bg:#ffffff;
+--mint:#eef3e8;
 --surface:#f4f5f0;
---surface-2:#eceee6;
 --stage:#f4f5f0;
 --ink:#171816;
---muted:#686c65;
+--muted:#676b64;
 --line:#e2e4dc;
 --btn:#1b1c1a;
 --btn-ink:#ffffff;
---green:#509a36;
---red:#d94629;
---yellow:#dbc04c;
---blue:#335da1;
---purple:#9265aa;
---green-soft:#e6efdf;
+--bezel:#1b1c1a;
+--green:#509a36;--red:#d94629;--yellow:#dbc04c;--blue:#335da1;--purple:#9265aa;
 --hand:"Gaegu","Nanum Pen Script",cursive;
 --sans:"IBM Plex Sans KR","Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
---step--1:.875rem; --step-0:1.0625rem; --step-1:1.25rem; --step-2:1.6rem; --step-3:2.15rem; --step-4:clamp(2.4rem,4.6vw,3.6rem);
---radius:20px;
+--h1:clamp(2.6rem,5.6vw,4.6rem);--h2:clamp(1.9rem,3.4vw,2.8rem);--lead:1.2rem;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
-body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:var(--step-0);line-height:1.75;word-break:keep-all;-webkit-font-smoothing:antialiased}
-h1,h2,h3{line-height:1.3;text-wrap:balance;margin:0;font-weight:700;letter-spacing:-.02em}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:1.0625rem;line-height:1.75;word-break:keep-all;-webkit-font-smoothing:antialiased}
+h1,h2,h3{margin:0;line-height:1.25;letter-spacing:-.025em;text-wrap:balance;font-weight:700}
 p{margin:0}
 a{color:inherit}
 :focus-visible{outline:3px solid var(--blue);outline-offset:3px;border-radius:6px}
-.wrap{max-width:1200px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.wrap{max-width:1180px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+.stk{--stk:drop-shadow(2px 0 0 #fff) drop-shadow(-2px 0 0 #fff) drop-shadow(0 2px 0 #fff) drop-shadow(0 -2px 0 #fff)}
+.boil{filter:url(#boil) var(--stk,)}
+.eyebrow{font-size:.85rem;font-weight:700;letter-spacing:.06em;color:var(--green)}
+.lead{font-size:var(--lead);color:var(--muted);line-height:1.7}
 .hand{font-family:var(--hand);font-weight:700}
-.boil{filter:url(#boil)}
-body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
-.topbar{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
-.topbar .wrap{display:flex;align-items:center;gap:28px;padding-block:14px}
-.logo{display:block;width:104px;height:auto;color:var(--ink)}
-.nav{display:flex;gap:22px;font-size:var(--step--1);font-weight:500;flex:1;flex-wrap:wrap}
-.nav a{text-decoration:none;color:var(--muted)}
-.nav a:hover{color:var(--ink)}
-.pill{display:inline-flex;align-items:center;gap:6px;font-size:.8rem;font-weight:700;padding:6px 12px;border-radius:999px;background:var(--green-soft);color:var(--ink);white-space:nowrap}
-.pill::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--green)}
-.hero .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:48px;align-items:center;padding-block:72px 64px}
-.eyebrow{font-size:var(--step--1);font-weight:700;letter-spacing:.06em;color:var(--muted)}
-.hero h1{font-size:var(--step-4);margin-top:14px}
-.hero .lede{margin-top:22px;color:var(--muted);max-width:30em}
-.hero .formula{margin-top:28px;display:flex;flex-direction:column;gap:6px;font-size:var(--step-1);font-weight:500}
-.formula b{font-weight:700}
-.dot{display:inline-block;width:.6em;height:.6em;border-radius:50%;margin-right:.45em;vertical-align:.05em}
-.brandline{margin-top:30px;padding-top:22px;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:6px}
-.brandline strong{font-size:var(--step-1)}
-.brandline span{font-size:var(--step--1);color:var(--muted)}
-.stage{position:relative;background:var(--stage);border-radius:28px;aspect-ratio:1.05/1;max-width:100%;overflow:hidden}
-.stage img{position:absolute;height:auto}
-.stage .note{position:absolute;left:24px;bottom:20px;font-family:var(--hand);font-size:1.35rem;color:#5c6058}
-.page .wrap{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:56px;align-items:start;padding-block:24px 40px}
-.story{display:flex;flex-direction:column;min-width:0}
-.sec{padding-block:64px;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:22px;max-width:720px}
-.sec:first-child{border-top:0;padding-top:24px}
-.sec h2{font-size:var(--step-3)}
-.sec .body{display:flex;flex-direction:column;gap:14px;color:var(--ink);max-width:36em}
-.sec .body p.muted{color:var(--muted)}
-.kicker{font-size:var(--step--1);font-weight:700;letter-spacing:.06em;color:var(--green)}
-.big{font-size:var(--step-2);font-weight:700;line-height:1.45;letter-spacing:-.02em}
-.quotes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
-.memo{background:var(--surface);border-radius:16px;padding:18px 20px;font-family:var(--hand);font-size:1.45rem;line-height:1.35;font-weight:700}
-.memo:nth-child(1){transform:rotate(-1.2deg)}
-.memo:nth-child(2){transform:rotate(.9deg)}
-.memo:nth-child(3){transform:rotate(.6deg)}
-.memo:nth-child(4){transform:rotate(-.8deg)}
-.swap{display:flex;flex-direction:column;gap:8px;padding:22px 24px;border-radius:var(--radius);border:1.5px dashed var(--line)}
-.swap s{color:var(--muted);text-decoration-thickness:2px}
-.swap strong{font-size:var(--step-1)}
-.lines{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
-.lines li{display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:baseline;padding:16px 0;border-bottom:1px solid var(--line);font-size:var(--step-1);font-weight:500}
-.lines li span{font-size:var(--step--1);color:var(--muted);font-weight:400;min-width:5.5em}
-.name{display:flex;flex-wrap:wrap;align-items:center;gap:12px;font-size:var(--step-2);font-weight:700}
-.name .chip{background:var(--surface);border-radius:14px;padding:6px 16px}
-.name .chip small{display:block;font-size:.8rem;font-weight:500;color:var(--muted)}
-.name .op{color:var(--muted);font-weight:400}
-.formula-row{display:flex;flex-wrap:wrap;align-items:center;gap:10px;font-size:var(--step-1);font-weight:700}
-.formula-row .t{padding:6px 14px;border-radius:999px;background:var(--surface)}
-.steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;counter-reset:s}
-.step{background:var(--surface);border-radius:18px;padding:16px;display:flex;flex-direction:column;gap:10px;min-width:0}
-.step .viz{background:var(--stage);border-radius:12px;height:120px;display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;padding:10px}
-.step .lab{font-size:var(--step--1);color:var(--muted)}
-.step h3{font-size:1.05rem}
-.step h3::before{counter-increment:s;content:counter(s) ". ";color:var(--muted);font-weight:500}
-.shape{width:34px;height:34px}
-.poses{display:flex;flex-direction:column;gap:2px;font-family:var(--hand);font-size:1.2rem;color:#2a2b29;line-height:1.2;text-align:center}
-.colors{display:flex;flex-wrap:wrap;gap:10px}
-.colors button{appearance:none;border:2px solid transparent;background:var(--surface);color:var(--ink);font:inherit;font-size:var(--step--1);font-weight:700;padding:8px 14px 8px 10px;border-radius:999px;cursor:pointer;display:inline-flex;align-items:center;gap:8px}
-.colors button i{width:20px;height:20px;border-radius:50%;display:block}
-.colors button[aria-pressed="true"]{border-color:var(--ink)}
-.meanings{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
-.meanings div{border-radius:16px;padding:18px;background:var(--surface);font-family:var(--hand);font-size:1.4rem;font-weight:700;line-height:1.3;min-height:92px;display:flex;flex-direction:column;justify-content:space-between;gap:8px}
-.meanings small{font-family:var(--sans);font-size:.78rem;font-weight:500;color:var(--muted)}
-.swatch-band{height:10px;border-radius:999px;transition:background .3s}
-.shorts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
-.short{background:var(--stage);border-radius:18px;padding:16px;display:flex;flex-direction:column;align-items:center;gap:6px;color:#2a2b29}
-.short img{width:86px;height:auto}
-.short p{font-family:var(--hand);font-size:1.3rem;font-weight:700;line-height:1.3;text-align:center}
-.phones{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
-.phone{display:flex;flex-direction:column;gap:10px;min-width:0}
-.phone .frame{border-radius:28px;border:6px solid var(--btn);overflow:hidden;background:#fff;aspect-ratio:390/700;max-width:100%}
-.phone .frame img{width:100%;display:block}
-.phone figcaption{font-size:var(--step--1);color:var(--muted)}
-.phone figcaption b{color:var(--ink);display:block}
-figure{margin:0}
-.asks{display:flex;flex-direction:column;gap:6px;font-family:var(--hand);font-size:1.4rem;font-weight:700;line-height:1.4}
-.notice{background:var(--surface);border-radius:16px;padding:16px 18px;font-size:var(--step--1);color:var(--muted);display:flex;gap:10px}
-.notice b{color:var(--ink);white-space:nowrap}
-.spread{display:grid;grid-template-columns:1.35fr 1fr;background:var(--stage);border-radius:22px;padding:18px;gap:0;color:#2a2b29}
-.spread .pg{background:#fffef9;padding:18px;min-width:0}
-.spread .pg:first-child{border-radius:12px 4px 4px 12px;box-shadow:inset -10px 0 14px -12px rgba(0,0,0,.25)}
-.spread .pg:last-child{border-radius:4px 12px 12px 4px;box-shadow:inset 10px 0 14px -12px rgba(0,0,0,.25)}
-.pg-h{font-size:.75rem;letter-spacing:.08em;color:#8a8d85;font-weight:700;display:flex;justify-content:space-between}
-.days{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin-top:10px}
-.day{border:1px solid #e3e3da;border-radius:8px;height:92px;position:relative;padding:5px 6px;font-size:.7rem;color:#8a8d85}
-.day img{position:absolute;width:56px;right:4px;bottom:2px}
-.ruled{margin-top:10px;background:repeating-linear-gradient(to bottom,transparent 0 31px,#e3e3da 31px 32px);min-height:192px;font-family:var(--hand);font-size:1.3rem;line-height:32px;font-weight:700;padding-top:2px}
-.week{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:8px}
-.wd{background:var(--stage);border-radius:16px;padding:10px 6px 12px;display:flex;flex-direction:column;align-items:center;gap:4px;text-align:center;color:#2a2b29;min-width:0}
-.wd b{font-size:.85rem}
-.wd img{width:100%;max-width:70px;height:auto;aspect-ratio:76/96}
-.wd span{font-family:var(--hand);font-size:1.02rem;font-weight:700;line-height:1.2}
-.wd.empty{background:transparent;border:2px dashed var(--line);color:var(--muted)}
-.wd.empty .blank{width:100%;max-width:70px;aspect-ratio:76/96;display:flex;align-items:center;justify-content:center;font-size:1.6rem}
-.scenes{display:flex;flex-direction:column;gap:12px}
-.scene{display:grid;grid-template-columns:96px 1fr;gap:18px;align-items:center;background:var(--surface);border-radius:18px;padding:14px 20px 14px 14px}
-.scene .pic{background:var(--stage);border-radius:14px;display:flex;align-items:center;justify-content:center;aspect-ratio:1}
-.scene .pic img{width:70px;height:auto}
-.scene small{font-size:var(--step--1);color:var(--muted);font-weight:500}
-.scene p{font-family:var(--hand);font-size:1.5rem;font-weight:700;line-height:1.3}
-.pull{font-size:var(--step-2);font-weight:700;line-height:1.45;padding-left:20px;border-left:4px solid var(--green)}
-.lineup{display:flex;justify-content:space-between;align-items:flex-end;background:var(--stage);border-radius:22px;padding:28px 22px 18px;gap:6px}
-.lineup img{width:17%;height:auto}
-.products{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
-.prod{border:1px solid var(--line);border-radius:var(--radius);padding:22px;display:flex;flex-direction:column;gap:10px;min-width:0}
-.prod .tag{font-size:.75rem;font-weight:700;letter-spacing:.06em;color:var(--muted)}
-.prod h3{font-size:var(--step-1)}
-.prod .copy{font-family:var(--hand);font-size:1.3rem;font-weight:700;line-height:1.35}
-.prod p{font-size:.95rem;color:var(--muted)}
-.prod .spec{margin-top:auto;padding-top:12px;border-top:1px dashed var(--line);font-size:.8rem;color:var(--muted)}
-.prod .bar{height:6px;border-radius:999px;width:44px}
-.rewards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
-.rw{border:1.5px solid var(--line);border-radius:var(--radius);padding:22px;display:flex;flex-direction:column;gap:10px;position:relative;min-width:0}
-.rw.best{border-color:var(--ink)}
-.rw .badge{position:absolute;top:-12px;right:18px;background:var(--btn);color:var(--btn-ink);font-size:.75rem;font-weight:700;padding:4px 10px;border-radius:999px}
-.rw .code{font-size:1.4rem;font-weight:700;letter-spacing:.04em}
-.rw ul{margin:0;padding-left:1.1em;font-size:.95rem}
-.rw .who{font-size:var(--step--1);color:var(--muted)}
-.rw .price{margin-top:auto;font-size:1.3rem;font-weight:700;color:var(--ink);font-variant-numeric:tabular-nums}
-.trust{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
-.trust li{display:flex;justify-content:space-between;gap:16px;align-items:center;padding:15px 0;border-bottom:1px solid var(--line)}
-.status{font-size:.75rem;font-weight:700;padding:4px 10px;border-radius:999px;white-space:nowrap}
-.status.on{background:var(--green-soft);color:var(--ink)}
-.status.later{background:var(--surface-2);color:var(--muted)}
-.faq{display:flex;flex-direction:column}
-.faq details{border-bottom:1px solid var(--line)}
-.faq summary{list-style:none;cursor:pointer;padding:18px 36px 18px 0;font-weight:700;position:relative}
-.faq summary::-webkit-details-marker{display:none}
-.faq summary::after{content:"+";position:absolute;right:4px;top:14px;font-size:1.4rem;font-weight:400;color:var(--muted);transition:transform .2s}
-.faq details[open] summary::after{transform:rotate(45deg)}
-.faq details p{padding:0 0 18px;color:var(--muted)}
-.join{background:var(--surface);border-radius:24px;padding:32px;display:flex;flex-direction:column;gap:18px}
-.join .letter{font-size:var(--step-1);line-height:1.7}
-.join .letter q{font-family:var(--hand);font-size:1.5rem;font-weight:700;quotes:"“" "”"}
-.btn{appearance:none;border:0;cursor:pointer;background:var(--btn);color:var(--btn-ink);font:inherit;font-weight:700;font-size:1.02rem;padding:16px 22px;border-radius:16px;width:100%;text-align:center}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;appearance:none;border:0;cursor:pointer;background:var(--btn);color:var(--btn-ink);font:inherit;font-weight:700;font-size:1rem;padding:14px 22px;border-radius:14px;text-decoration:none}
 .btn:hover{opacity:.9}
-.msg{font-size:var(--step--1);color:var(--muted);min-height:1.4em}
-.terms{display:grid;grid-template-columns:auto 1fr;gap:6px 18px;font-size:var(--step--1);color:var(--muted)}
-.terms dt{font-weight:700;color:var(--ink)}
-.terms dd{margin:0}
-.fund{position:sticky;top:calc(env(safe-area-inset-top,0px) + 84px);border:1px solid var(--line);border-radius:24px;padding:24px;display:flex;flex-direction:column;gap:16px;background:var(--bg)}
-.fund h2{font-size:1.35rem}
-.fund .sub{font-size:var(--step--1);color:var(--muted);margin-top:4px}
-.opts{display:flex;flex-direction:column;gap:8px}
-.opt{display:grid;grid-template-columns:auto 1fr;gap:4px 10px;align-items:start;padding:12px 14px;border:1.5px solid var(--line);border-radius:14px;cursor:pointer}
-.opt input{margin:4px 0 0;accent-color:var(--green)}
-.opt b{font-size:.95rem}
-.opt span{grid-column:2;font-size:.8rem;color:var(--muted);line-height:1.5}
-.opt:has(input:checked){border-color:var(--ink)}
-.opt b{display:flex;align-items:center;gap:0}
-.opt .pr{font-style:normal;margin-left:auto;font-variant-numeric:tabular-nums;font-size:.95rem}
-.opt em{font-style:normal;font-size:.7rem;font-weight:700;background:var(--green-soft);padding:2px 7px;border-radius:999px;margin-left:6px}
-.fund .fine{font-size:.78rem;color:var(--muted);line-height:1.6}
-.ending{background:var(--surface)}
-.ending .wrap{padding-block:96px;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:48px;align-items:center}
-.ending h2{font-size:var(--step-4)}
-.ending .body{margin-top:22px;display:flex;flex-direction:column;gap:10px;color:var(--muted);max-width:30em}
-.ending .sign{margin-top:26px;font-weight:700;font-size:var(--step-1);color:var(--ink)}
-.ending .stage{aspect-ratio:1.3/1}
-footer .wrap{padding-block:28px 96px;font-size:.8rem;color:var(--muted);display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between}
-.buy{border:0;border-radius:24px;padding:0;width:min(420px,calc(100vw - 32px));background:var(--bg);color:var(--ink);box-shadow:0 30px 80px -20px rgba(0,0,0,.4)}
-.buy::backdrop{background:rgba(20,22,18,.45)}
-.buy form,.buy .done{padding:28px;display:flex;flex-direction:column;gap:8px}
-.buy-h{display:flex;justify-content:space-between;align-items:center;margin-bottom:4px}
-.buy h2{font-size:1.4rem}
-.buy .x{appearance:none;border:0;background:transparent;color:var(--muted);font-size:1.8rem;line-height:1;cursor:pointer;padding:4px 8px}
-.buy-opt{font-size:.9rem;color:var(--muted);background:var(--surface);border-radius:12px;padding:10px 14px;margin-bottom:8px}
-.buy-opt b{color:var(--ink);margin-left:6px}
-.buy label{font-size:.85rem;font-weight:700;margin-top:6px}
-.buy input{font:inherit;font-size:1rem;padding:12px 14px;border:1.5px solid var(--line);border-radius:12px;background:var(--bg);color:var(--ink)}
-.buy input:focus{outline:none;border-color:var(--ink)}
-.buy .err{color:var(--red);font-size:.85rem;min-height:1.3em}
-.buy .fine{font-size:.78rem;color:var(--muted)}
-.buy .done p{color:var(--muted);margin-bottom:12px}
-.mbar{display:none}
-@media (max-width:1040px){
-.page .wrap{grid-template-columns:minmax(0,1fr)}
-.fund{position:static}
-.mbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:9;gap:12px;align-items:center;background:var(--bg);border-top:1px solid var(--line);padding:10px max(16px,env(safe-area-inset-right,0px)) calc(10px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px))}
-.mbar .btn{padding:13px 16px}
-.mbar small{font-size:.75rem;color:var(--muted);white-space:nowrap}
+.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid var(--line)}
+.phone{position:relative;width:100%;max-width:300px;aspect-ratio:390/844;border-radius:46px;background:var(--bezel);padding:10px;box-shadow:0 30px 60px -30px rgba(20,30,15,.35)}
+.phone img{display:block;width:100%;height:100%;object-fit:cover;border-radius:36px;background:#fff}
+section.hero,section.grammar,section.tomorrow,section.final,section.paper .box,section.paper .stick{background-image:url("a/texture.webp");background-repeat:repeat;background-size:512px auto}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--mint)}
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:color-mix(in srgb,var(--mint) 90%,transparent);backdrop-filter:blur(10px)}
+.nav .wrap{display:flex;align-items:center;gap:28px;padding-block:14px}
+.logo{display:block;width:108px;height:auto;color:var(--ink)}
+.nav nav{display:flex;gap:24px;flex:1;font-size:.92rem;font-weight:500}
+.nav nav a{text-decoration:none;color:var(--muted)}
+.nav nav a:hover{color:var(--ink)}
+.nav .btn{padding:10px 16px;font-size:.9rem;border-radius:12px}
+.hero{background:var(--mint);overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:40px;align-items:center;padding-block:64px 0}
+.hero h1{font-size:var(--h1)}
+.hero h1 .hl{position:relative;z-index:0;white-space:nowrap}
+.hero h1 .hl::after{content:"";position:absolute;left:-2%;right:-2%;bottom:.06em;height:.28em;background:var(--yellow);opacity:.55;z-index:-1;border-radius:6px;transform:rotate(-1deg)}
+.hero h1 span{position:relative;z-index:0}
+.hero .lead{margin-top:22px;max-width:28em}
+.cta-row{margin-top:32px;display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.store{display:inline-flex;flex-direction:column;line-height:1.25;padding:10px 18px;border-radius:14px;border:1.5px solid var(--line);background:var(--bg);min-width:150px}
+.store small{font-size:.72rem;color:var(--muted)}
+.store b{font-size:1rem}
+.hero .stagewrap{position:relative;display:flex;justify-content:center;padding-bottom:0;min-height:520px}
+.hero .phone{max-width:290px;margin-bottom:-90px;z-index:1}
+.float{position:absolute;height:auto;z-index:2}
+.msg{font-size:.88rem;color:var(--muted);min-height:1.5em;margin-top:12px}
+.msg a{font-weight:700;color:var(--ink)}
+.band{border-top:1px solid var(--line);background:#ffffff;overflow:hidden;padding-block:22px;position:relative;z-index:2}
+.track{display:flex;gap:36px;width:max-content;animation:slide 144s linear infinite}
+.track img{height:92px;width:auto}
+@keyframes slide{to{transform:translateX(-50%)}}
+.sec{padding-block:120px}
+.sec-h{display:flex;flex-direction:column;gap:14px;max-width:640px}
+.sec-h h2{font-size:var(--h2)}
+.flow{--navh:74px}
+.flow.sec{padding-block:0}
+.flow .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:72px;max-width:1420px}
+.flow-left{position:sticky;top:calc(env(safe-area-inset-top,0px) + var(--navh));height:calc(100vh - var(--navh) - env(safe-area-inset-top,0px));display:grid;grid-template-rows:minmax(max-content,1fr) auto 1fr;justify-items:center;align-self:start}
+.flow-title{align-self:end;justify-self:center;width:max-content;max-width:100%;align-items:flex-start;text-align:left;padding-top:96px;padding-bottom:28px;gap:10px}
+.flow-title h2{font-size:clamp(1.6rem,2.6vw,2.3rem)}
+.flow-title .lead{font-size:1.05rem}
+.flow-left .phone{--ph:min(65vh,calc(100vh - var(--navh) - 360px),720px);grid-row:2;height:var(--ph);width:calc((var(--ph) - 12px) * 390 / 844 + 12px);max-width:none;aspect-ratio:auto;padding:6px;border-radius:40px}
+.flow-left .phone img{position:absolute;inset:6px;width:calc(100% - 12px);height:calc(100% - 12px);border-radius:34px;object-fit:contain;opacity:0;transition:opacity .2s ease}
+.flow-left .phone img.on{opacity:1}
+@media (min-width:861px){.fstep{gap:16px}.fstep .no{font-size:1.9rem}.fstep h3{font-size:clamp(1.9rem,3.1vw,2.65rem)}.fstep .lead{font-size:1.4rem}.fstep .chip{font-size:1rem;padding:5px 14px}}
+.steps{display:flex;flex-direction:column;padding-block:22vh}
+.fstep{min-height:75vh;display:flex;flex-direction:column;justify-content:center;gap:14px;padding-block:24px}
+.fstep .no{font-family:var(--hand);font-size:1.6rem;font-weight:700;color:var(--muted)}
+.fstep h3{font-size:clamp(1.6rem,2.6vw,2.2rem)}
+.fstep .chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px}
+.chip{font-size:.85rem;padding:4px 12px;border-radius:999px;background:var(--surface);color:var(--ink)}
+.fstep .shot{display:none}
+.grammar{background:var(--surface)}
+.gram{margin-top:56px;display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:24px}
+.explorer{background:var(--bg);border-radius:28px;padding:28px;display:flex;flex-direction:column;gap:20px;min-width:0}
+.shapes{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+.shapes button{appearance:none;font:inherit;font-weight:700;font-size:.92rem;cursor:pointer;padding:9px 16px;border-radius:999px;border:1.5px solid var(--line);background:var(--bg);color:var(--ink)}
+.shapes button[aria-pressed="true"]{background:var(--btn);color:var(--btn-ink);border-color:var(--btn)}
+.ex-body{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:24px;text-align:center}
+.ex-stage{background:var(--stage);border-radius:28px;aspect-ratio:1;width:min(360px,100%);display:flex;align-items:center;justify-content:center}
+.ex-stage img{width:72%;height:auto}
+.ex-txt{max-width:26em}
+.ex-txt h3{font-size:1.6rem}
+.ex-txt p{color:var(--muted);margin-top:8px}
+.ex-colors{display:flex;gap:8px;margin-top:16px;align-items:center;justify-content:center;flex-wrap:wrap;font-size:.85rem;color:var(--muted)}
+.ex-colors i{width:22px;height:22px;border-radius:50%;display:block}
+.sheet{background:var(--bg);border-radius:28px;padding:20px;display:flex;flex-direction:column;gap:12px;align-items:center;min-width:0}
+.sheet img{width:100%;max-width:330px;border-radius:18px;border:1px solid var(--line)}
+.sheet p{font-size:.85rem;color:var(--muted);text-align:center}
+.trio{margin-top:24px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.tcard{background:var(--bg);border-radius:24px;padding:24px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.tcard .k{display:flex;align-items:baseline;gap:10px}
+.tcard .k b{font-size:1.25rem}
+.tcard .k span{font-size:.85rem;color:var(--muted)}
+.tcard .n{font-family:var(--hand);font-size:2.6rem;font-weight:700;line-height:1}
+.tcard .list{display:flex;flex-wrap:wrap;gap:5px}
+.tcard .list .chip{background:var(--surface);font-size:.8rem}
+.archive .phones{margin-top:64px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px;align-items:start}
+.archive figure{margin:0;display:flex;flex-direction:column;align-items:center;gap:18px;min-width:0}
+.archive figure:nth-child(2){margin-top:56px}
+.archive figcaption{text-align:center;display:flex;flex-direction:column;gap:4px;max-width:18em}
+.archive figcaption b{font-size:1.15rem}
+.archive figcaption span{color:var(--muted);font-size:.95rem}
+.archive .cal{width:100%;max-width:300px;border-radius:28px;overflow:hidden;border:1px solid var(--line);background:#fff}
+.archive .cal img{display:block;width:100%}
+.tomorrow{background:var(--mint)}
+.tomorrow .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:64px;align-items:center}
+.picks{margin-top:28px;display:flex;flex-direction:column;gap:10px;max-width:440px}
+.pick{background:var(--bg);border-radius:16px;padding:14px 18px;display:grid;grid-template-columns:56px 1fr;gap:12px;align-items:baseline}
+.pick small{font-size:.8rem;color:var(--muted);font-weight:700}
+.tomorrow .phone{margin-inline:auto}
+.promises{margin-top:56px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.promise{border:1px solid var(--line);border-radius:24px;padding:26px;display:flex;flex-direction:column;gap:12px;min-width:0}
+.promise .pic{height:96px;display:flex;align-items:flex-end}
+.promise .pic img{height:92px;width:auto}
+.promise h3{font-size:1.25rem}
+.promise p{color:var(--muted);font-size:.98rem}
+.paper .box{background:var(--surface);border-radius:32px;padding:48px;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:40px;align-items:center}
+.paper .kit{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.paper .stick{background:var(--stage);border-radius:22px;aspect-ratio:1.4;position:relative;overflow:hidden}
+.paper .stick img{position:absolute;height:auto}
+.faq{margin-top:40px;max-width:760px}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{list-style:none;cursor:pointer;padding:20px 40px 20px 0;font-weight:700;font-size:1.05rem;position:relative}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";position:absolute;right:6px;top:15px;font-size:1.5rem;font-weight:400;color:var(--muted);transition:transform .2s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{padding:0 0 20px;color:var(--muted)}
+.final{background:var(--mint);text-align:center;overflow:hidden}
+.final .wrap{padding-block:120px 0;display:flex;flex-direction:column;align-items:center;gap:20px}
+.final h2{font-size:var(--h1)}
+.final .row{display:flex;justify-content:center;align-items:flex-end;gap:2%;margin-top:40px;width:100%;max-width:900px}
+.final .row img{width:14%;height:auto}
+.final .row img,.promise .pic img{--stk:drop-shadow(2px 0 0 #fff) drop-shadow(-2px 0 0 #fff) drop-shadow(0 2px 0 #fff) drop-shadow(0 -2px 0 #fff)}
+footer .wrap{padding-block:32px;display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between;font-size:.82rem;color:var(--muted)}
+@media (max-width:960px){
+.gram{grid-template-columns:minmax(0,1fr)}
+.trio,.promises{grid-template-columns:minmax(0,1fr)}
 }
 @media (max-width:860px){
-.hero .wrap,.ending .wrap{grid-template-columns:minmax(0,1fr);gap:32px;padding-block:44px}
-.nav{display:none}
-.topbar .wrap{justify-content:space-between}
-.steps{grid-template-columns:repeat(2,minmax(0,1fr))}
-.week{grid-template-columns:repeat(4,minmax(0,1fr))}
-.spread{grid-template-columns:minmax(0,1fr)}
-.spread .pg:first-child,.spread .pg:last-child{border-radius:12px;box-shadow:none}
-.spread .pg:last-child{margin-top:10px}
+.nav nav{display:none}
+.nav .wrap{justify-content:space-between}
+.hero .wrap,.tomorrow .wrap,.paper .box{grid-template-columns:minmax(0,1fr)}
+.hero .wrap{padding-block:40px 0}
+.hero .stagewrap{min-height:0}
+.sec{padding-block:80px}
+.flow.sec{padding-block:80px 0}
+.flow .wrap{grid-template-columns:minmax(0,1fr);gap:0}
+.flow-left{position:static;height:auto;display:block}
+.flow-left .phone{display:none}
+.flow-title{padding-top:0;padding-bottom:0;width:auto;align-items:flex-start;text-align:left}
+.steps{padding-block:0 40px}
+.fstep{min-height:0;opacity:1;padding-block:36px}
+.fstep .shot{display:block;margin-top:12px}
+.fstep .shot .phone{max-width:240px}
+.archive .phones{grid-template-columns:minmax(0,1fr);gap:56px}
+.archive figure:nth-child(2){margin-top:0}
+.paper .box{padding:28px}
 }
-@media (max-width:600px){
-body{font-size:1rem}
-.sec{padding-block:48px}
-.quotes,.meanings,.shorts,.products,.rewards,.phones{grid-template-columns:minmax(0,1fr)}
-.phones{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
-.phone .frame{border-width:3px;border-radius:16px}
-.phone figcaption{font-size:.72rem}
-.scene{grid-template-columns:72px 1fr}
-.scene .pic img{width:54px}
-.join{padding:22px}
-.days{grid-template-columns:repeat(2,minmax(0,1fr))}
+@media (max-width:600px){.hero .float{display:none}}
+@media (max-width:520px){
+.ex-stage{width:min(260px,100%)}
+.track img{height:72px}
 }
-@media (prefers-reduced-motion: reduce){.boil{filter:none}}
+@media (prefers-reduced-motion: reduce){
+html{scroll-behavior:auto}
+.track{animation:none}
+.boil{filter:var(--stk,none)}
+.flow-left .phone img,.fstep{transition:none}
+}
 </style>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
 <filter id="boil" x="-5%" y="-5%" width="110%" height="110%">
@@ -248,9 +192,9 @@ body{font-size:1rem}
 <feDisplacementMap in="SourceGraphic" scale="2.4" xChannelSelector="R" yChannelSelector="G"/>
 </filter>
 </svg>
-<header class="topbar">
+<header class="nav">
 <div class="wrap">
-<a href="../" aria-label="dooday 앱 소개 사이트로 가기"><svg class="logo" role="img" aria-label="dooday" width="118" height="40" viewBox="0 0 118 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+<a href="#top" aria-label="dooday 처음으로"><svg class="logo" role="img" aria-label="dooday" width="118" height="40" viewBox="0 0 118 40" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M52.057 14.0051C48.6599 11.2686 43.5724 11.3472 40.317 14.2409C37.0144 17.1819 36.92 22.1829 40.089 25.2339C43.7297 28.7409 50.1225 28.3949 53.2679 24.3847C55.7999 21.1528 55.2573 16.5842 52.057 14.0051ZM46.3246 24.5419C43.706 24.5419 41.5751 22.4188 41.5751 19.7925C41.5751 17.1661 43.6982 15.0431 46.3246 15.0431C48.951 15.0431 51.074 17.1661 51.074 19.7925C51.074 22.4188 48.951 24.5419 46.3246 24.5419Z" fill="currentColor"/>
 <path d="M38.9955 14.217C35.685 11.3155 30.6289 11.2526 27.2399 14.052C24.8809 16.0099 23.8587 19.1081 24.7708 22.0333C25.392 24.0227 26.776 25.611 28.6316 26.5782C31.5489 28.0959 35.111 27.9936 37.934 26.2008C40.12 24.809 41.4803 22.5759 41.5826 20.0281C41.6769 17.7713 40.6862 15.6954 39.0034 14.217H38.9955ZM33.0194 24.5574C30.393 24.5574 28.27 22.4265 28.27 19.8079C28.27 17.1894 30.4009 15.0585 33.0194 15.0585C35.6379 15.0585 37.7689 17.1894 37.7689 19.8079C37.7689 22.4265 35.6379 24.5574 33.0194 24.5574Z" fill="currentColor"/>
 <path d="M20.3364 21.8211C20.0691 21.4201 19.786 21.0899 19.6129 20.6101C21.9955 17.5041 23.8513 14.0993 25.0229 10.3642C25.6678 8.30403 26.1159 5.87425 25.3532 3.91629C24.7555 2.37506 23.1672 1.54942 21.5473 1.93471C19.6444 2.39079 18.0874 4.1915 17.1202 5.91357C15.8386 8.18608 15.1152 10.663 14.7927 13.2815C11.5294 13.4388 8.50205 15.2552 6.52836 17.7951C4.81414 20.0754 3.86268 23.3545 5.48253 25.7763C6.32391 27.0345 7.73931 27.6242 9.25693 27.6242C10.6409 27.5849 11.8754 27.1132 13.1179 26.4054C14.5333 25.5876 15.6971 24.5891 16.9159 23.4409C18.5593 25.9179 21.3272 27.2468 24.2524 26.9322V23.4646C22.6796 23.5982 21.2642 23.0085 20.3364 21.8133V21.8211ZM12.0641 23.2365C11.4429 23.5511 10.8532 23.8578 10.0905 23.9206C9.39849 23.9756 8.88736 23.5982 8.75368 22.9771C8.63573 22.4108 8.72223 21.8368 8.91881 21.2942C9.31984 20.1305 10.0354 19.1791 10.9397 18.3534C11.9619 17.3312 13.2437 16.6549 14.7062 16.4191C14.7769 17.8815 15.0522 19.1869 15.4847 20.5158C14.4546 21.5852 13.3616 22.5209 12.072 23.2443L12.0641 23.2365ZM20.6981 6.74709C21.0126 6.13375 21.3744 5.59117 22.0113 5.33168C22.3337 5.88998 22.3573 6.50332 22.2865 7.10879C21.9484 10.262 20.3285 13.8476 18.6929 16.6234C18.3391 13.2894 19.2276 9.59362 20.6981 6.74709Z" fill="#509A36"/>
@@ -261,514 +205,290 @@ body{font-size:1rem}
 <path d="M12.0563 7.39184C13.5807 7.39184 14.8163 6.15612 14.8163 4.6318C14.8163 3.10747 13.5807 1.87177 12.0563 1.87177C10.532 1.87177 9.29626 3.10747 9.29626 4.6318C9.29626 6.15612 10.532 7.39184 12.0563 7.39184Z" fill="#509A36"/>
 </svg>
 </a>
-<nav class="nav" aria-label="페이지 안 이동">
-<a href="#story">스토리</a>
+<nav aria-label="사이트 안 이동">
 <a href="#how">기록 방법</a>
-<a href="#products">상품 구성</a>
-<a href="#reward">리워드</a>
+<a href="#grammar">캐릭터 문법</a>
+<a href="#archive">모아보기</a>
 <a href="#faq">자주 묻는 질문</a>
+<a href="goods/" style="color:var(--ink);font-weight:700">굿즈 구매</a>
 </nav>
-<span class="pill">구매 문의 받는 중</span>
+<a class="btn" href="#download">출시 소식 받기</a>
 </div>
 </header>
 <section class="hero" id="top">
 <div class="wrap">
 <div>
-<p class="eyebrow">오늘도 꼭 잘해야만 할까요?</p>
-<h1>잘 보낸 하루가 아니어도, 괜찮아.</h1>
-<p class="lede">해야 할 일을 다 끝내지 못한 날도, 괜히 마음이 복잡했던 날도, 평범해서 특별히 쓸 말이 없는 날도. 그날의 나는 분명히 있었으니까.</p>
-<div class="formula">
-<span><i class="dot" style="background:var(--green)"></i><b>생각</b>은 모양으로,</span>
-<span><i class="dot" style="background:var(--red)"></i><b>감정</b>은 표정으로,</span>
-<span><i class="dot" style="background:var(--blue)"></i><b>행동</b>은 움직임으로.</span>
-</div>
-<div class="brandline">
-<strong>오늘의 나를 그리는 캐릭터 다이어리, dooday</strong>
-<span>주간 플래너 · 캐릭터 스티커팩 · 미니 노트 · 캐릭터 다이어리 앱</span>
+<p class="eyebrow">오늘의 나를 그리는 캐릭터 다이어리</p>
+<h1 style="margin-top:14px">오늘의 나는<br><span class="hl"><span>어떤 모습</span></span>일까요?</h1>
+<p class="lead">생각은 모양으로, 감정은 표정으로, 행동은 자세로. 세 가지만 고르면 오늘 하루가 나만의 캐릭터로 남아요. 긴 일기를 쓰지 않아도 괜찮아요.</p>
+<div class="cta-row">
+<span class="store"><small>출시 예정</small><b>App Store</b></span>
+<span class="store"><small>출시 예정</small><b>Google Play</b></span>
 </div>
 </div>
-<div class="stage" role="img" aria-label="서로 다른 모양과 표정을 한 dooday 캐릭터 다섯">
-<img class="boil" src="../a/ob0.svg" alt="" style="width:30%;left:34%;top:7%">
-<img class="boil" src="../a/ob2.svg" alt="" style="width:24%;left:8%;top:30%">
-<img class="boil" src="../a/ob4.svg" alt="" style="width:25%;left:68%;top:27%">
-<img class="boil" src="../a/ob3.svg" alt="" style="width:26%;left:20%;top:58%">
-<img class="boil" src="../a/ob1.svg" alt="" style="width:28%;left:52%;top:55%">
-<p class="note">오늘의 나를, 있는 그대로.</p>
+<div class="stagewrap">
+<img class="float boil stk" src="a/ob1.svg" alt="" style="width:26%;left:2%;top:10%">
+<img class="float boil stk" src="a/ob3.svg" alt="" style="width:24%;right:0;top:4%">
+<img class="float boil stk" src="a/ob4.svg" alt="" style="width:22%;right:2%;top:52%">
+<img class="float boil stk" src="a/ob2.svg" alt="" style="width:22%;left:4%;top:58%">
+<div class="phone"><img src="a/home.webp" alt="dooday 홈 화면: '오늘의 나는 어떤 모습일까요?' 질문과 오늘 기록하기 버튼"></div>
 </div>
 </div>
 </section>
-<div class="page">
+<div class="band" aria-hidden="true">
+<div class="track">
+<img src="a/g13.svg" alt=""><img src="a/ob2.svg" alt=""><img src="a/g9.svg" alt=""><img src="a/ob3.svg" alt=""><img src="a/g11.svg" alt=""><img src="a/ob1.svg" alt=""><img src="a/g10.svg" alt=""><img src="a/g12.svg" alt=""><img src="a/ob4.svg" alt=""><img src="a/g8.svg" alt=""><img src="a/ob0.svg" alt=""><img src="a/g7.svg" alt="">
+</div>
+</div>
+<section class="sec flow" id="how">
 <div class="wrap">
-<main class="story">
-<section class="sec" id="story">
-<p class="kicker">기록의 고민</p>
-<h2>일기장을 펼치고도 한참을 고민한 적 있나요?</h2>
-<div class="quotes">
-<p class="memo">오늘 무슨 일이 있었더라?</p>
-<p class="memo">그때 어떤 마음이었지?</p>
-<p class="memo">어디서부터 적어야 할까.</p>
-<p class="memo">처음 며칠은 열심히 썼는데…</p>
+<div class="flow-left">
+<div class="sec-h flow-title">
+<p class="eyebrow">기록 방법</p>
+<h2>세 번만 고르면,<br>오늘의 내가 완성돼요.</h2>
+<p class="lead">쓰고 싶은 날엔 한 줄을 적고, 아닌 날엔 건너뛰어도 돼요.</p>
 </div>
-<div class="body">
-<p>처음 며칠은 열심히 쓰다가 어느새 비어버린 다이어리. 기록하고 싶은 마음은 있지만 긴 문장을 완성하는 일은 어렵게 느껴질 수 있어요.</p>
-<p>그래서 dooday는 질문을 바꾸었습니다.</p>
+<div class="phone" aria-hidden="true">
+<img class="on" data-i="0" src="a/thought.webp" alt="">
+<img data-i="1" src="a/emotion.webp" alt="">
+<img data-i="2" src="a/action.webp" alt="">
+<img data-i="3" src="a/today.webp" alt="">
 </div>
-<div class="swap">
-<s>오늘 무슨 일을 잘했나요?</s>
-<strong>오늘의 나는 어떤 모습이었나요?</strong>
-</div>
-</section>
-<section class="sec">
-<p class="kicker">기록의 재해석</p>
-<h2>기록에도 정답이 있을까요?</h2>
-<div class="body">
-<p>오늘을 꼭 멋진 문장으로 설명하지 않아도 괜찮아요. 작고 삐뚤빼뚤한 모양 하나에도 나만의 하루가 담길 수 있으니까.</p>
-</div>
-<ul class="lines">
-<li><span>글 대신</span>모양으로</li>
-<li><span>정해진 의미 대신</span>내가 느낀 의미로</li>
-<li><span>빈칸 대신</span>빠진 날짜까지 자연스럽게 받아들이는 기록</li>
-</ul>
-<p class="big">기록을 잘하는 것보다, 나를 표현하는 것이 먼저.</p>
-</section>
-<section class="sec">
-<p class="kicker">브랜드 소개</p>
-<h2>안녕하세요, dooday입니다.</h2>
-<div class="name" aria-label="Doodle 더하기 Day는 dooday">
-<span class="chip">Doodle<small>자유롭게 그리는 낙서</small></span>
-<span class="op">+</span>
-<span class="chip">Day<small>하루</small></span>
-<span class="op">=</span>
-<span>dooday</span>
-</div>
-<div class="body">
-<p>우리는 기록이 꼭 반듯하고 정돈된 모습일 필요는 없다고 생각했습니다. 복잡한 마음도, 느긋한 하루도, 아무것도 하기 싫었던 순간도 나의 일부니까요.</p>
-<p>그래서 하루를 글로 잘 정리하는 대신, 도형과 표정, 자세를 조합해 오늘의 나를 표현하는 방법을 만들었습니다.</p>
-<p>화면에서 조합하는 캐릭터 다이어리 앱부터 손으로 붙이고 채우는 플래너와 스티커, 나만의 문장을 남기는 미니 노트까지. 오늘의 나를 표현하는 방식에 자유로움을 더하고 싶었습니다.</p>
-</div>
-</section>
-<section class="sec" id="how">
-<p class="kicker">핵심 경험</p>
-<h2>오늘의 나는 어떻게 생겼을까요?</h2>
-<div class="formula-row" aria-label="생각 더하기 감정 더하기 행동은 오늘의 나">
-<span class="t">생각</span>+<span class="t">감정</span>+<span class="t">행동</span>=<span>오늘의 나</span>
-</div>
-<div class="body">
-<p>오늘의 생각은 어떤 모양이었나요? 동그랗게 흘러가는 생각이었나요, 여기저기 뻗어나가는 복잡한 생각이었나요? 그때의 마음에는 어떤 표정이 어울릴까요? 그리고 오늘의 나는 어떤 자세로 하루를 보냈나요?</p>
 </div>
 <div class="steps">
-<div class="step">
-<div class="viz" aria-hidden="true">
-<svg class="shape" viewBox="0 0 40 40"><path fill="#509a36" d="M20 3c9 0 17 6 17 16s-7 18-17 18S3 30 3 20 11 3 20 3z"/></svg>
-<svg class="shape" viewBox="0 0 40 40"><path fill="#335da1" d="M5 6l30-1 1 29-31 1z"/></svg>
-<svg class="shape" viewBox="0 0 40 40"><path fill="#d94629" d="M20 2l4 10 11-5-6 10 10 4-11 3 5 11-10-6-3 11-3-11-11 5 5-10L1 21l11-4-6-10 10 5z"/></svg>
-<svg class="shape" viewBox="0 0 40 40"><path fill="#dbc04c" d="M10 14c0-6 8-9 12-5 3-4 11-2 11 4 5 1 6 9 1 11 2 6-5 10-10 7-4 4-12 2-12-3-6 0-8-8-3-10-2-2-1-4 1-4z"/></svg>
+<article class="fstep on" data-i="0">
+<span class="no">01 · 생각</span>
+<h3>오늘 머릿속에 머문 생각은 어떤 모양인가요?</h3>
+<p class="lead">떠오르는 만큼만 적고, 그 생각에 가까운 모양 하나와 오늘의 나에게 입혀줄 색 하나를 골라요.</p>
+<div class="chips"><span class="chip">긍정</span><span class="chip">부정</span><span class="chip">중립</span><span class="chip">불확실</span><span class="chip">회피</span></div>
+<div class="shot"><div class="phone"><img src="a/thought.webp" alt="생각 기록 화면: 생각을 적고 다섯 가지 모양과 색 중 하나를 고르는 화면"></div></div>
+</article>
+<article class="fstep" data-i="1">
+<span class="no">02 · 감정</span>
+<h3>그때 어떤 기분이 들었나요?</h3>
+<p class="lead">기쁨부터 허무함까지, 20가지 표정 중에서 오늘을 가장 잘 보여주는 하나를 골라요. 잘 모르겠는 날엔 그렇다고 남겨도 돼요.</p>
+<div class="chips"><span class="chip">기쁨</span><span class="chip">감사</span><span class="chip">설렘</span><span class="chip">평온</span><span class="chip">불안</span><span class="chip">지침</span><span class="chip">+14</span></div>
+<div class="shot"><div class="phone"><img src="a/emotion.webp" alt="감정 기록 화면: 20가지 표정 중 하나를 고르는 화면"></div></div>
+</article>
+<article class="fstep" data-i="2">
+<span class="no">03 · 행동</span>
+<h3>오늘의 나는 어떻게 움직였나요?</h3>
+<p class="lead">정리, 휴식, 산책, 미루기까지. 작은 행동도 나의 하루가 돼요. 아무것도 못 한 날엔 그 버튼을 누르면 돼요.</p>
+<div class="chips"><span class="chip">정리</span><span class="chip">휴식</span><span class="chip">도전</span><span class="chip">산책</span><span class="chip">미루기</span><span class="chip">+15</span></div>
+<div class="shot"><div class="phone"><img src="a/action.webp" alt="행동 기록 화면: 20가지 자세 중 하나를 고르는 화면"></div></div>
+</article>
+<article class="fstep" data-i="3">
+<span class="no">04 · 오늘의 나</span>
+<h3>이런 나도, 나니까.</h3>
+<p class="lead">고른 모양에 표정과 자세가 더해져 오늘의 캐릭터가 태어나요. 왜 이런 모습이 됐는지도 바로 확인할 수 있어요.</p>
+<div class="shot"><div class="phone"><img src="a/today.webp" alt="오늘의 나 화면: 노란 캐릭터와 '이런 나도, 나니까.' 문구"></div></div>
+</article>
 </div>
-<h3>생각 도형 선택</h3>
-<p class="lab">흘러가는지, 뻗어나가는지, 반듯한지.</p>
-</div>
-<div class="step">
-<div class="viz" aria-hidden="true">
-<svg class="shape" viewBox="0 0 40 40" fill="none" stroke="#171816" stroke-width="2.4" stroke-linecap="round"><path d="M10 15q3-3 6 0M24 15q3-3 6 0M12 25q8 8 16 0"/></svg>
-<svg class="shape" viewBox="0 0 40 40" fill="none" stroke="#171816" stroke-width="2.4" stroke-linecap="round"><path d="M10 13l5 3-5 3M30 13l-5 3 5 3M13 28h14"/></svg>
-<svg class="shape" viewBox="0 0 40 40" fill="none" stroke="#171816" stroke-width="2.4" stroke-linecap="round"><path d="M11 16h5M24 16h5M14 29q6-5 12 0"/></svg>
-<svg class="shape" viewBox="0 0 40 40" fill="none" stroke="#171816" stroke-width="2.4" stroke-linecap="round"><circle cx="13" cy="16" r="1.6" fill="#171816"/><circle cx="27" cy="16" r="1.6" fill="#171816"/><path d="M16 27h8"/></svg>
-</div>
-<h3>감정 표정 선택</h3>
-<p class="lab">그때의 마음에 어울리는 얼굴.</p>
-</div>
-<div class="step">
-<div class="viz" aria-hidden="true">
-<div class="poses"><span>산책하는</span><span>기지개 켜는</span><span>손 흔드는</span></div>
-</div>
-<h3>행동 자세 선택</h3>
-<p class="lab">오늘 하루를 보낸 몸짓.</p>
-</div>
-<div class="step">
-<div class="viz" aria-hidden="true"><img class="boil" src="../a/g13.svg" alt="" style="height:100px;width:auto"></div>
-<h3>캐릭터 완성</h3>
-<p class="lab">세 가지가 모여 오늘의 내가 돼요.</p>
-</div>
-</div>
-<p class="body muted" style="color:var(--muted)">똑같은 하루가 없는 것처럼 매번 나를 표현하는 모습도 달라질 수 있어요.</p>
-</section>
-<section class="sec">
-<p class="kicker">색상의 자유</p>
-<h2>노란색은 꼭 기쁜 마음이어야 할까요?</h2>
-<div class="body">
-<p>누군가에게 노란색은 즐거움일 수 있어요. 하지만 누군가에게는 따뜻함일 수도, 쓸쓸한 오후의 빛일 수도 있겠죠. 색을 눌러 다른 사람들의 해석을 살펴보세요.</p>
-</div>
-<div class="colors" role="group" aria-label="색 고르기">
-<button type="button" id="c-yellow" data-c="yellow" aria-pressed="true"><i style="background:var(--yellow)"></i>노랑</button>
-<button type="button" id="c-blue" data-c="blue" aria-pressed="false"><i style="background:var(--blue)"></i>파랑</button>
-<button type="button" id="c-red" data-c="red" aria-pressed="false"><i style="background:var(--red)"></i>빨강</button>
-<button type="button" id="c-green" data-c="green" aria-pressed="false"><i style="background:var(--green)"></i>초록</button>
-<button type="button" id="c-purple" data-c="purple" aria-pressed="false"><i style="background:var(--purple)"></i>보라</button>
-</div>
-<div class="swatch-band" id="band" style="background:var(--yellow)"></div>
-<div class="meanings" id="meanings" aria-live="polite"></div>
-<div class="body">
-<p>dooday는 색에 하나의 감정만 담아두지 않습니다. 그날의 나에게 어떤 의미인지, 내가 직접 정할 수 있도록.</p>
-<p class="muted">누군가의 해석보다 나의 느낌을 먼저 살펴보세요.</p>
 </div>
 </section>
-<section class="sec">
-<p class="kicker">긴 글 없는 기록</p>
-<h2>오늘의 일기, 꼭 길게 쓸 필요는 없어요.</h2>
-<div class="body">
-<p>어떤 날에는 하고 싶은 말이 아주 많고, 어떤 날에는 아무 말도 떠오르지 않죠. 말로 표현하기 어려운 날에는 마음에 드는 도형 하나를 고르고, 그날의 표정을 붙여보세요. 조금 더 남기고 싶은 이야기가 생긴다면 한두 마디를 덧붙이면 됩니다.</p>
+<section class="sec grammar" id="grammar">
+<div class="wrap">
+<div class="sec-h">
+<p class="eyebrow">캐릭터 문법</p>
+<h2>생각은 몸의 형태, 감정은 표정, 행동은 팔다리의 자세.</h2>
+<p class="lead">모든 캐릭터는 같은 규칙으로 만들어져요. 그래서 모아보면 내 하루의 흐름이 읽혀요.</p>
 </div>
-<div class="shorts">
-<div class="short"><img class="boil" src="../a/g9.svg" alt=""><p>오늘은 조금 복잡했어.</p></div>
-<div class="short"><img class="boil" src="../a/g12.svg" alt=""><p>생각보다 즐거웠던 하루.</p></div>
-<div class="short"><img class="boil" src="../a/g10.svg" alt=""><p>아무것도 안 했지만, 쉬어서 좋았어.</p></div>
+<div class="gram">
+<div class="explorer">
+<div class="shapes" role="group" aria-label="생각 모양 고르기">
+<button type="button" id="s-pos" data-s="pos" aria-pressed="true">긍정</button>
+<button type="button" id="s-neg" data-s="neg" aria-pressed="false">부정</button>
+<button type="button" id="s-neu" data-s="neu" aria-pressed="false">중립</button>
+<button type="button" id="s-unc" data-s="unc" aria-pressed="false">불확실</button>
+<button type="button" id="s-avo" data-s="avo" aria-pressed="false">회피</button>
 </div>
-<p class="big">하루 전체를 잘 정리하지 않아도 괜찮아요. 내가 느낀 오늘의 작은 조각이면 충분해요.</p>
+<div class="ex-body">
+<div class="ex-stage"><img class="boil" id="ex-img" src="a/ob0.svg" alt=""></div>
+<div class="ex-txt" aria-live="polite">
+<h3 id="ex-title">긍정 · 동그란 몸</h3>
+<p id="ex-desc">둥글게 흘러가는 생각은 동그란 몸이 돼요.</p>
+<div class="ex-colors"><span>색은 직접 골라요</span><i style="background:var(--red)"></i><i style="background:var(--yellow)"></i><i style="background:var(--green)"></i><i style="background:var(--blue)"></i><i style="background:var(--purple)"></i></div>
+</div>
+</div>
+</div>
+<div class="sheet">
+<img src="a/why.webp" alt="'왜 이런 모습인가요?' 안내 화면: 생각은 몸의 형태, 감정은 표정, 행동은 팔의 자세로 담았다는 설명">
+<p>캐릭터를 누르면 '왜 이런 모습인가요?'에서 내 선택이 어디에 담겼는지 보여줘요.</p>
+</div>
+</div>
+<div class="trio">
+<div class="tcard">
+<div class="k"><b>생각</b><span>몸의 형태 + 색</span></div>
+<span class="n">5 × 5</span>
+<div class="list"><span class="chip">긍정</span><span class="chip">부정</span><span class="chip">중립</span><span class="chip">불확실</span><span class="chip">회피</span></div>
+</div>
+<div class="tcard">
+<div class="k"><b>감정</b><span>눈과 입의 표정</span></div>
+<span class="n">20</span>
+<div class="list"><span class="chip">기쁨</span><span class="chip">감사</span><span class="chip">설렘</span><span class="chip">기대</span><span class="chip">자신감</span><span class="chip">평온</span><span class="chip">집중</span><span class="chip">호기심</span><span class="chip">공감</span><span class="chip">만족</span><span class="chip">불안</span><span class="chip">두려움</span><span class="chip">부담감</span><span class="chip">혼란</span><span class="chip">수치심</span><span class="chip">슬픔</span><span class="chip">외로움</span><span class="chip">무기력</span><span class="chip">지침</span><span class="chip">허무함</span></div>
+</div>
+<div class="tcard">
+<div class="k"><b>행동</b><span>팔다리의 자세</span></div>
+<span class="n">20</span>
+<div class="list"><span class="chip">정리</span><span class="chip">휴식</span><span class="chip">도전</span><span class="chip">집중</span><span class="chip">질문</span><span class="chip">기록</span><span class="chip">관찰</span><span class="chip">만남</span><span class="chip">회고</span><span class="chip">이야기</span><span class="chip">공유</span><span class="chip">산책</span><span class="chip">명상</span><span class="chip">미루기</span><span class="chip">공감</span><span class="chip">도움</span><span class="chip">협력</span><span class="chip">참기</span><span class="chip">숨기기</span><span class="chip">피하기</span></div>
+</div>
+</div>
+</div>
 </section>
-<section class="sec" id="app">
-<p class="kicker">앱 소개</p>
-<h2>화면 속에 하나씩 모이는 오늘의 나.</h2>
-<div class="body">
-<p>손으로 일기를 쓰기 어려운 날에는 스마트폰에서 오늘의 캐릭터를 만들어보세요. 오늘 떠오르는 생각에 어울리는 모양을 선택하고, 색과 표정, 자세를 조합합니다. 그날 기억하고 싶은 내용을 짧게 적으면 하루를 돌아볼 수 있는 기록이 됩니다.</p>
+<section class="sec archive" id="archive">
+<div class="wrap">
+<div class="sec-h">
+<p class="eyebrow">모아보기</p>
+<h2>달라서 더 나다운, 하루하루.</h2>
+<p class="lead">쌓인 캐릭터를 나란히 놓으면 평소엔 지나쳤던 나의 흐름이 보여요.</p>
 </div>
 <div class="phones">
-<figure class="phone"><div class="frame"><img src="../a/emotion.webp" alt="감정 기록 화면: 기쁨, 감사, 설렘 등 20가지 표정 중 하나를 고르는 화면"></div><figcaption><b>마음 고르기</b>20가지 표정 중 오늘의 감정 하나</figcaption></figure>
-<figure class="phone"><div class="frame"><img src="../a/today.webp" alt="오늘의 나 화면: 노란 캐릭터와 '이런 나도, 나니까.' 문구"></div><figcaption><b>오늘의 나</b>생각·감정·행동이 모인 캐릭터</figcaption></figure>
-<figure class="phone"><div class="frame"><img src="../a/gallery.webp" alt="갤러리 화면: 날짜별로 모인 서로 다른 캐릭터 아홉"></div><figcaption><b>나의 모습들</b>날짜별로 쌓이는 갤러리</figcaption></figure>
+<figure><div class="phone"><img src="a/gallery.webp" alt="갤러리 화면: 날짜별 캐릭터 아홉이 격자로 모인 '나의 모습들'"></div><figcaption><b>나의 모습들</b><span>날짜별로 모인 캐릭터를 한눈에. 생각별로 모아볼 수도 있어요.</span></figcaption></figure>
+<figure><div class="cal"><img src="a/calendar.webp" alt="기록 캘린더 화면: 10월 달력의 날짜마다 그날의 캐릭터"></div><figcaption><b>기록 캘린더</b><span>빈 날은 빈 대로. 기록한 날만 캐릭터가 자리를 채워요.</span></figcaption></figure>
+<figure><div class="phone"><img src="a/insight.webp" alt="인사이트 화면: 이번 주 캐릭터와 감정 흐름 막대, 자주 한 행동"></div><figcaption><b>조금씩, 나를 알아가요</b><span>이번 주·이번 달 감정 흐름과 자주 한 행동을 보여줘요.</span></figcaption></figure>
 </div>
-<div class="asks">
-<span>“최근에는 어떤 표정을 자주 골랐지?”</span>
-<span>“어떤 날에 비슷한 생각을 했을까?”</span>
-<span>“지난주와 이번 주의 나는 어떻게 다를까?”</span>
-</div>
-<p class="notice"><b>개발 단계 안내</b>앱은 현재 프로토타입 단계예요. 위 화면은 프로토타입 디자인이며, 정식 출시 시점·지원 OS·저장 및 동기화 방식은 확정되는 대로 안내드립니다.</p>
-</section>
-<section class="sec">
-<p class="kicker">실물 문구</p>
-<h2>손으로 붙이면 조금 더 특별해지는 하루.</h2>
-<div class="body">
-<p>휴대폰을 잠시 내려놓고 종이 위에 오늘의 나를 남겨보는 시간. 주간 플래너에 도형 스티커를 붙이고 표정과 자세를 조합하면 하루의 기분과 경험을 시각적으로 표현할 수 있습니다.</p>
-<p>기억하고 싶은 순간은 짧게 적어도 좋아요. 미니 노트에는 캐릭터와 함께 떠오른 생각을 조금 더 자유롭게 남길 수 있습니다.</p>
-</div>
-<div class="spread" aria-label="주간 플래너와 미니 노트 사용 예시 일러스트">
-<div class="pg">
-<div class="pg-h"><span>WEEKLY</span><span>주간 플래너</span></div>
-<div class="days">
-<div class="day">MON<img class="boil" src="../a/ob0.svg" alt=""></div>
-<div class="day">TUE</div>
-<div class="day">WED<img class="boil" src="../a/ob2.svg" alt=""></div>
-<div class="day">THU<img class="boil" src="../a/ob1.svg" alt=""></div>
-<div class="day">FRI</div>
-<div class="day">SAT<img class="boil" src="../a/ob3.svg" alt=""></div>
-<div class="day">SUN<img class="boil" src="../a/ob4.svg" alt=""></div>
-<div class="day">MEMO</div>
-</div>
-</div>
-<div class="pg">
-<div class="pg-h"><span>NOTE</span><span>미니 노트</span></div>
-<div class="ruled">
-목요일. 뾰족한 날이었는데<br>
-저녁엔 좀 웃었다.<br>
-그것도 나니까.<br>
-<br>
-토요일은 몽글몽글.
-</div>
-</div>
-</div>
-<p class="big">일정을 관리하기 위한 칸에서, 나를 돌아보기 위한 작은 공간으로.</p>
-</section>
-<section class="sec">
-<p class="kicker">일주일 기록</p>
-<h2>일곱 번의 하루, 일곱 가지의 나.</h2>
-<div class="week">
-<div class="wd"><b>월</b><img class="boil" src="../a/g9.svg" alt=""><span>생각이 많았던 날</span></div>
-<div class="wd"><b>화</b><img class="boil" src="../a/g13.svg" alt=""><span>웃을 일이 있던 날</span></div>
-<div class="wd"><b>수</b><img class="boil" src="../a/g8.svg" alt=""><span>조금 지친 날</span></div>
-<div class="wd"><b>목</b><img class="boil" src="../a/g11.svg" alt=""><span>새로 시도한 날</span></div>
-<div class="wd"><b>금</b><img class="boil" src="../a/g10.svg" alt=""><span>느긋했던 날</span></div>
-<div class="wd"><b>토</b><img class="boil" src="../a/g7.svg" alt=""><span>마음이 간질간질</span></div>
-<div class="wd empty"><b>일</b><div class="blank">·</div><span>비워둔 날</span></div>
-</div>
-<div class="body">
-<p>일주일 동안의 캐릭터를 나란히 놓아보면 우리가 보낸 하루들이 보입니다. 어떤 날은 비슷한 표정을 짓고 어떤 날은 전혀 다른 모양을 하고 있을 거예요.</p>
-<p>꼭 일주일을 빠짐없이 채우지 않아도 괜찮아요. 남겨진 기록이 있다면 그 기록부터 돌아보면 되니까요.</p>
 </div>
 </section>
-<section class="sec">
-<p class="kicker">이럴 때 꺼내요</p>
-<h2>특별한 날만을 위한 기록이 아니에요.</h2>
-<div class="scenes">
-<div class="scene"><div class="pic"><img class="boil" src="../a/g8.svg" alt=""></div><div><small>할 일이 많았던 하루 끝</small><p>“오늘은 정신없었지만 그래도 무사히 끝났어.”</p></div></div>
-<div class="scene"><div class="pic"><img class="boil" src="../a/g9.svg" alt=""></div><div><small>퇴근하고 조용히 쉬는 시간</small><p>“오늘은 사람들에게 조금 지쳤나 봐.”</p></div></div>
-<div class="scene"><div class="pic"><img class="boil" src="../a/g10.svg" alt=""></div><div><small>여유로운 주말 오후</small><p>“오늘은 아무것도 하지 않아서 좋았어.”</p></div></div>
-</div>
-<p class="body" style="color:var(--muted)">내가 표현하고 싶은 순간이라면 어느 때라도 괜찮아요.</p>
-</section>
-<section class="sec">
-<p class="kicker">브랜드 이야기</p>
-<p class="pull">더 나은 내가 되기 전에, 지금의 나를 이해하고 있는가?</p>
-<div class="body">
-<p>우리는 매일 조금 더 나은 사람이 되기 위해 노력합니다. 더 부지런해지고 싶고 더 계획적으로 살고 싶고 어제보다 더 많은 일을 해내고 싶어 하죠.</p>
-<p>그런데 문득 이런 질문이 떠올랐습니다. 더 나은 내가 되기 전에, 나는 지금의 나를 얼마나 알고 있을까? 오늘 어떤 생각을 했는지, 어떤 순간에 마음이 움직였는지, 어떤 행동을 하며 하루를 보냈는지.</p>
-<p>그렇다고 긴 일기를 매일 써야만 하는 걸까요? dooday는 다른 가능성을 생각했습니다. 내가 느낀 하루를 모양과 표정, 움직임으로 표현할 수 있다면 어떨까.</p>
-<p>어떤 사람은 네모로 하루를 표현하고, 어떤 사람은 구불구불한 동그라미에 웃는 얼굴을 붙일 수도 있겠죠. 모두 다르지만 모두 그 사람만의 기록입니다.</p>
-<p>누군가가 자신의 하루에 잠시 관심을 기울이고, 지나쳤던 감정이나 생각에 작은 이름을 붙여보는 것. 그게 dooday가 바라는 일이에요.</p>
-</div>
-</section>
-<section class="sec">
-<p class="kicker">디자인 철학</p>
-<h2>삐뚤빼뚤해서 더 나다운 모양.</h2>
-<div class="lineup" aria-hidden="true">
-<img class="boil" src="../a/ob2.svg" alt="">
-<img class="boil" src="../a/ob3.svg" alt="">
-<img class="boil" src="../a/ob0.svg" alt="">
-<img class="boil" src="../a/ob1.svg" alt="">
-<img class="boil" src="../a/ob4.svg" alt="">
-</div>
-<div class="body">
-<p>반듯하지 않아도 좋아요. 조금 삐뚤어진 선, 고르지 않은 색감, 어디로 움직일지 모르는 작은 캐릭터. dooday는 손그림과 크레파스의 친근한 질감을 디자인에 담았습니다.</p>
-</div>
-<p class="big">완성도보다 개성을, 정답보다 나만의 표현을.</p>
-</section>
-<section class="sec" id="products">
-<p class="kicker">상품 구성</p>
-<h2>종이 위에서도, 화면 속에서도.</h2>
-<div class="products">
-<article class="prod">
-<i class="bar" style="background:var(--green)"></i>
-<p class="tag">PAPER · 01</p>
-<h3>주간 플래너</h3>
-<p class="copy">할 일을 채우는 플래너를 넘어, 오늘의 나를 남기는 공간.</p>
-<p>일주일의 나를 한눈에. 날짜와 기록 공간에 하루의 캐릭터를 붙이고 간단한 메모를 남기는 종이 기록 도구예요.</p>
-<p class="spec">크기 · 페이지 수 · 제본 · 종이 · 날짜형/만년형: 확정 후 공개</p>
-</article>
-<article class="prod">
-<i class="bar" style="background:var(--red)"></i>
-<p class="tag">STICKER · 02</p>
-<h3>캐릭터 스티커팩</h3>
-<p class="copy">오늘의 마음을 닮은 조각을 하나씩 골라보세요.</p>
-<p>그날의 모습을 골라 붙여요. 생각의 도형, 감정의 표정, 행동의 자세를 조합해 표현하는 스티커예요.</p>
-<p class="spec">시트 크기 · 매수 · 디자인 종류 · 점착 사양: 확정 후 공개</p>
-</article>
-<article class="prod">
-<i class="bar" style="background:var(--yellow)"></i>
-<p class="tag">NOTE · 03</p>
-<h3>미니 노트</h3>
-<p class="copy">오늘의 나를 닮은 문장을 작은 노트에 남겨보세요.</p>
-<p>오늘의 작은 이야기를 모아요. 캐릭터 기록 옆에 덧붙이고 싶은 생각, 짧은 문장, 기억하고 싶은 순간을 자유롭게 적는 작은 노트예요.</p>
-<p class="spec">크기 · 페이지 수 · 내지 구성 · 제본 · 재질: 확정 후 공개</p>
-</article>
-<article class="prod">
-<i class="bar" style="background:var(--blue)"></i>
-<p class="tag">APP · 04</p>
-<h3>캐릭터 다이어리 앱</h3>
-<p class="copy">종이가 없는 순간에도 오늘의 나를 표현할 수 있도록.</p>
-<p>화면에서 만드는 나만의 캐릭터. 도형·색·표정·자세를 선택해 하루를 표현하고 모아보는 디지털 경험이에요.</p>
-<p class="spec">개발 현황 · 지원 OS · 이용 시점 · 저장 방식: 확정 후 공개</p>
-</article>
-</div>
-</section>
-<section class="sec" id="reward">
-<p class="kicker">구성과 가격</p>
-<h2>나에게 맞는 구성을 골라보세요.</h2>
-<div class="rewards">
-<div class="rw">
-<span class="code">플래너 세트</span>
-<ul><li>주간 플래너</li><li>캐릭터 스티커팩</li></ul>
-<p class="who">종이 위에 하루를 붙여보고 싶은 분께</p>
-<p class="price">15,000원</p>
-</div>
-<div class="rw">
-<span class="code">미니 노트</span>
-<ul><li>미니 노트</li></ul>
-<p class="who">캐릭터 옆에 짧은 문장을 남기고 싶은 분께</p>
-<p class="price">10,000원</p>
-</div>
-<div class="rw">
-<span class="code">키링</span>
-<ul><li>dooday 캐릭터 키링</li></ul>
-<p class="who">오늘의 나를 가방에 달고 다니고 싶은 분께</p>
-<p class="price">3,000원</p>
-</div>
-<div class="rw best">
-<span class="badge">추천</span>
-<span class="code">풀 세트</span>
-<ul><li>주간 플래너</li><li>캐릭터 스티커팩</li><li>미니 노트</li><li>키링</li></ul>
-<p class="who">dooday를 한 번에 다 써보고 싶은 분께 · 따로 살 때보다 3,000원 저렴해요</p>
-<p class="price">25,000원</p>
-</div>
-</div>
-<p class="body" style="color:var(--muted);font-size:var(--step--1)">구매 문의를 남겨주시면 수량과 배송 일정을 확인해 직접 연락드려요.</p>
-</section>
-<section class="sec">
-<p class="kicker">만드는 과정</p>
-<h2>기획부터 제작까지, 과정을 함께 보여드릴게요.</h2>
-<ul class="trust">
-<li>브랜드 철학과 기록 방식 기획 자료<span class="status on">공개 중</span></li>
-<li>도형·표정·행동의 캐릭터 디자인 체계<span class="status on">공개 중</span></li>
-<li>앱 화면 프로토타입과 사용 흐름<span class="status on">공개 중</span></li>
-<li>플래너·스티커팩·미니 노트의 실제 디자인과 제작 과정<span class="status later">제작 후 공개</span></li>
-<li>사용자 테스트 계획과 결과<span class="status later">확보 후 공개</span></li>
-</ul>
-<p class="body" style="color:var(--muted);font-size:var(--step--1)">페이지에 나오는 기록 예시는 시연용으로 만든 것이며, 실제 사용자 후기가 아니에요. 후기는 사용자 테스트를 거친 뒤 구분해서 공개합니다.</p>
-</section>
-<section class="sec" id="faq">
-<p class="kicker">자주 묻는 질문</p>
-<h2>궁금한 점을 모았어요.</h2>
-<div class="faq">
-<details><summary>매일 써야 하나요?</summary><p>아니요. 기록하고 싶은 날부터 시작할 수 있어요. 빠진 날이 있어도 괜찮아요.</p></details>
-<details><summary>긴 글을 써야 하나요?</summary><p>도형과 스티커 조합만으로도 하루를 표현할 수 있어요. 더 남기고 싶을 때만 미니 노트에 글을 더하면 됩니다.</p></details>
-<details><summary>색과 도형에 정답이 있나요?</summary><p>없어요. 내 느낌에 맞게 자유롭게 고르면 됩니다. dooday는 진단이나 성격 분류 도구가 아니에요.</p></details>
-<details><summary>앱이 없어도 쓸 수 있나요?</summary><p>네. 실물 플래너와 스티커만으로도 기록할 수 있도록 기획했어요.</p></details>
-<details><summary>앱과 종이 기록이 자동으로 연동되나요?</summary><p>자동 동기화 제공 여부는 아직 확정되지 않았어요. 정해지는 대로 안내드릴게요.</p></details>
-<details><summary>제품 규격과 배송은 어떻게 되나요?</summary><p>실물 샘플을 확인한 뒤 확정된 규격과 배송 일정을 이 페이지에 공개하고, 구매 문의를 남긴 분께 따로 안내드릴 예정이에요.</p></details>
-<details><summary>교환이나 환불은 어떻게 하나요?</summary><p>최종 판매 채널에 고지된 교환·환불 정책을 따릅니다.</p></details>
-<details><summary>심리적인 효과가 검증된 제품인가요?</summary><p>dooday는 의학적·심리적 효과를 보장하거나 진단하는 제품이 아니에요. 나를 표현하는 기록 도구로 즐겨주세요.</p></details>
-</div>
-</section>
-<section class="sec" id="join">
-<p class="kicker">구매 안내</p>
-<h2>dooday 기록 키트를 만나보세요.</h2>
-<div class="join">
-<p class="letter">오늘부터 매일 무언가를 잘해내겠다고 약속하지 않아도 괜찮아요. 대신 가끔 나에게 물어봐 주세요. <q>오늘의 나는 어떤 모습이었지?</q> 그 작은 질문에 나만의 캐릭터로 답해보는 일.</p>
-<button class="btn" type="button" id="join-btn" data-buy>dooday 기록 키트 구매하기</button>
-<dl class="terms">
-<dt>구매 방법</dt><dd>이름과 연락처를 남기면 확인 후 개별 연락</dd>
-<dt>구성</dt><dd>플래너 세트 15,000원 · 미니 노트 10,000원 · 키링 3,000원 · 풀 세트 25,000원</dd>
-<dt>배송</dt><dd>제작 일정 확정 후 공개</dd>
-<dt>교환·환불</dt><dd>최종 판매 채널의 고지 정책을 따름</dd>
-</dl>
-</div>
-</section>
-</main>
-<aside class="fund" aria-label="굿즈 구매">
-<div>
-<span class="pill">구매 문의 받는 중</span>
-<h2 style="margin-top:12px">dooday 기록 키트</h2>
-<p class="sub">오늘의 나를 그리는 캐릭터 다이어리</p>
-</div>
-<div class="opts" role="radiogroup" aria-label="구성 고르기">
-<label class="opt"><input type="radio" name="rw" id="rw-planner" value="플래너 세트 · 15,000원"><b>플래너 세트<i class="pr">15,000원</i></b><span>주간 플래너 + 캐릭터 스티커팩</span></label>
-<label class="opt"><input type="radio" name="rw" id="rw-note" value="미니 노트 · 10,000원"><b>미니 노트<i class="pr">10,000원</i></b><span>미니 노트</span></label>
-<label class="opt"><input type="radio" name="rw" id="rw-keyring" value="키링 · 3,000원"><b>키링<i class="pr">3,000원</i></b><span>dooday 캐릭터 키링</span></label>
-<label class="opt"><input type="radio" name="rw" id="rw-full" value="풀 세트 · 25,000원" checked><b>풀 세트<em>추천</em><i class="pr">25,000원</i></b><span>주간 플래너 + 캐릭터 스티커팩 + 미니 노트 + 키링</span></label>
-</div>
-<button class="btn" type="button" id="aside-btn" data-buy>구매하기</button>
-<p class="fine">이름과 연락처만 남겨주시면 가격·수량·배송 일정을 확인해 직접 연락드려요.</p>
-</aside>
-</div>
-</div>
-<section class="ending">
+<section class="sec tomorrow">
 <div class="wrap">
 <div>
+<p class="eyebrow">내일의 선택</p>
+<h2 style="font-size:var(--h2);margin-top:14px">내일의 나에게 작은 선택 하나.</h2>
+<p class="lead" style="margin-top:18px">오늘을 남긴 다음엔 내일 해볼 만한 작은 일을 하나 골라요. 부담 없이, 할 수 있는 만큼만. 오늘은 여기까지 해도 괜찮아요.</p>
+<div class="picks">
+<div class="pick"><small>질문</small><span>나에게 고마웠던 순간 하나 적기</span></div>
+<div class="pick"><small>행동</small><span>10분 동안 천천히 산책하기</span></div>
+<div class="pick"><small>루틴</small><span>잠들기 전 1분, 내 마음 살피기</span></div>
+</div>
+</div>
+<div class="phone"><img src="a/tomorrow.webp" alt="내일의 선택 화면: 질문, 행동, 루틴 세 가지 작은 선택지"></div>
+</div>
+</section>
+<section class="sec">
+<div class="wrap">
+<div class="sec-h">
+<p class="eyebrow">dooday의 약속</p>
+<h2>잘 쓰라고 재촉하지 않아요.</h2>
+</div>
+<div class="promises">
+<div class="promise"><div class="pic"><img class="boil stk" src="a/g10.svg" alt=""></div><h3>매일 안 써도 괜찮아요</h3><p>알림으로 다그치거나 연속 기록을 강요하지 않아요. 기록하고 싶은 날부터 시작하면 돼요.</p></div>
+<div class="promise"><div class="pic"><img class="boil stk" src="a/g13.svg" alt=""></div><h3>색과 모양에 정답은 없어요</h3><p>노랑이 꼭 기쁨일 필요는 없어요. 그날의 나에게 어떤 의미인지는 내가 정해요.</p></div>
+<div class="promise"><div class="pic"><img class="boil stk" src="a/g9.svg" alt=""></div><h3>진단하지 않아요</h3><p>dooday는 성격을 분류하거나 마음 상태를 진단하는 앱이 아니에요. 나를 표현하는 기록 도구예요.</p></div>
+</div>
+</div>
+</section>
+<section class="sec paper" style="padding-top:0">
+<div class="wrap">
+<div class="box">
+<div>
+<p class="eyebrow">종이 위에서도</p>
+<h2 style="font-size:var(--h2);margin-top:14px">손으로 붙이는 dooday 기록 키트.</h2>
+<p class="lead" style="margin-top:16px">휴대폰을 잠시 내려놓고 싶은 날엔 주간 플래너에 캐릭터 스티커를 붙이고, 미니 노트에 짧은 문장을 남겨보세요. 앱 없이도 쓸 수 있어요.</p>
+<div class="kit"><span class="chip" style="background:var(--bg)">주간 플래너</span><span class="chip" style="background:var(--bg)">캐릭터 스티커팩</span><span class="chip" style="background:var(--bg)">미니 노트</span><span class="chip" style="background:var(--bg)">키링</span></div>
+<div class="cta-row"><a class="btn" href="goods/">굿즈 구매 페이지 보기</a></div>
+</div>
+<div class="stick" aria-hidden="true">
+<img class="boil" src="a/g11.svg" alt="" style="width:24%;left:8%;top:14%">
+<img class="boil" src="a/g8.svg" alt="" style="width:24%;left:38%;top:30%">
+<img class="boil" src="a/g12.svg" alt="" style="width:24%;left:68%;top:10%">
+<img class="boil" src="a/g7.svg" alt="" style="width:22%;left:66%;top:52%">
+</div>
+</div>
+</div>
+</section>
+<section class="sec" id="faq" style="padding-top:40px">
+<div class="wrap">
+<div class="sec-h">
+<p class="eyebrow">자주 묻는 질문</p>
+<h2>궁금한 점을 모았어요.</h2>
+</div>
+<div class="faq">
+<details><summary>언제 출시되나요?</summary><p>지금은 프로토타입 단계예요. 출시 일정과 지원 OS(iOS·Android)는 확정되는 대로 이 페이지에서 알려드릴게요.</p></details>
+<details><summary>하루에 얼마나 걸리나요?</summary><p>생각 모양, 감정 표정, 행동 자세를 하나씩 고르면 끝이에요. 글은 쓰고 싶을 때만 적으면 돼요.</p></details>
+<details><summary>기록을 빼먹은 날은 어떻게 되나요?</summary><p>그냥 비어 있어요. 캘린더와 갤러리는 기록한 날만 보여주고, 빠진 날을 탓하지 않아요.</p></details>
+<details><summary>종이 기록 키트와 연동되나요?</summary><p>앱과 종이 기록의 자동 연동 여부는 아직 정해지지 않았어요. 둘 다 따로 써도 충분하도록 만들고 있어요.</p></details>
+<details><summary>심리 검사나 진단 기능이 있나요?</summary><p>없어요. dooday는 의학적·심리적 효과를 보장하거나 진단하지 않아요.</p></details>
+</div>
+</div>
+</section>
+<section class="final" id="download">
+<div class="wrap">
+<p class="eyebrow">곧 만나요</p>
 <h2>오늘의 나를, 있는 그대로.</h2>
-<div class="body">
-<p>어떤 모습의 하루라도, 그건 오늘의 나니까.</p>
-<p>밝았던 날도, 마음이 복잡했던 날도, 아무 말 없이 지나간 날도. 굳이 더 나은 모습으로 바꾸지 않아도 괜찮아요.</p>
-<p>오늘의 나를 발견하고 그 모습 그대로 남겨주세요.</p>
+<p class="lead">잘 보낸 하루가 아니어도 괜찮아요. dooday가 출시되면 가장 먼저 알려드릴게요.</p>
+<div class="cta-row" style="justify-content:center">
+<button class="btn" type="button" id="notify">출시 소식 받기</button>
 </div>
-<p class="sign">dooday</p>
-</div>
-<div class="stage" aria-hidden="true">
-<img class="boil" src="../a/g11.svg" alt="" style="width:20%;left:8%;top:22%">
-<img class="boil" src="../a/g13.svg" alt="" style="width:21%;left:30%;top:12%">
-<img class="boil" src="../a/g10.svg" alt="" style="width:19%;left:53%;top:24%">
-<img class="boil" src="../a/g9.svg" alt="" style="width:19%;left:74%;top:14%">
-<img class="boil" src="../a/g8.svg" alt="" style="width:19%;left:20%;top:55%">
-<img class="boil" src="../a/g12.svg" alt="" style="width:19%;left:44%;top:54%">
-<img class="boil" src="../a/g7.svg" alt="" style="width:19%;left:66%;top:57%">
+<p class="msg" id="notify-msg" aria-live="polite"></p>
+<div class="row" aria-hidden="true">
+<img class="boil" src="a/ob2.svg" alt=""><img class="boil" src="a/ob3.svg" alt=""><img class="boil" src="a/ob0.svg" alt=""><img class="boil" src="a/ob1.svg" alt=""><img class="boil" src="a/ob4.svg" alt="">
 </div>
 </div>
 </section>
 <footer>
 <div class="wrap">
-<span>dooday · 오늘의 나를 그리는 캐릭터 다이어리</span>
-<span>배송 일정은 구매 문의 후 개별 안내드리며, 남겨주신 연락처는 구매 안내에만 사용해요.</span>
+<span>dooday · Doodle + Day, 오늘의 나를 그리는 캐릭터 다이어리</span>
+<span>화면은 개발 중인 프로토타입이며, 예시 기록은 시연용이에요.</span>
 </div>
 </footer>
-<dialog class="buy" id="buy" aria-labelledby="buy-title">
-<form id="buy-form" novalidate>
-<div class="buy-h">
-<h2 id="buy-title">구매 문의</h2>
-<button type="button" class="x" id="buy-close" aria-label="닫기">×</button>
-</div>
-<p class="buy-opt">선택한 구성 <b id="buy-pick">풀 세트 · 25,000원</b></p>
-<label for="buy-name">이름</label>
-<input id="buy-name" name="name" autocomplete="name" maxlength="40" required>
-<label for="buy-phone">전화번호</label>
-<input id="buy-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="010-0000-0000" maxlength="20" required>
-<p class="err" id="buy-err" aria-live="polite"></p>
-<button class="btn" type="submit" id="buy-submit">문의 남기기</button>
-<p class="fine">남겨주신 이름과 연락처는 구매 안내 연락에만 사용해요.</p>
-</form>
-<div class="done" id="buy-done" hidden>
-<h2>접수됐어요.</h2>
-<p>확인 후 남겨주신 번호로 연락드릴게요.</p>
-<button class="btn" type="button" id="buy-ok">확인</button>
-</div>
-</dialog>
-<div class="mbar">
-<small>풀 세트 25,000원</small>
-<button class="btn" type="button" data-buy>구매하기</button>
-</div>
 <script>
 (function(){
-var data={
-yellow:[["즐거움","웃음이 많았던 날"],["따뜻함","누군가 챙겨준 날"],["쓸쓸한 오후의 빛","혼자 걷던 퇴근길"]],
-blue:[["차분함","생각이 가라앉은 밤"],["서늘한 거리감","말수가 줄었던 날"],["깊은 집중","한 가지에 몰두한 시간"]],
-red:[["설렘","기다리던 일이 있던 날"],["답답함","속이 끓었던 오후"],["뜨거운 열정","끝까지 해낸 하루"]],
-green:[["쉼","천천히 숨 돌린 주말"],["새 출발","처음 해본 일이 있던 날"],["잔잔한 평온","별일 없이 지나간 하루"]],
-purple:[["신비로움","이상한 꿈을 꾼 아침"],["복잡한 마음","정리가 안 되던 저녁"],["혼자이고 싶음","조용히 있고 싶던 밤"]]
-};
-var box=document.getElementById('meanings'),band=document.getElementById('band');
-function show(c){
-box.innerHTML='';
-data[c].forEach(function(m){
-var d=document.createElement('div');
-d.style.borderTop='6px solid var(--'+c+')';
-d.textContent=m[0];
-var s=document.createElement('small');s.textContent='예: '+m[1];
-d.appendChild(s);box.appendChild(d);
-});
-band.style.background='var(--'+c+')';
-document.querySelectorAll('.colors button').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.c===c?'true':'false')});
-}
-document.querySelectorAll('.colors button').forEach(function(b){b.addEventListener('click',function(){show(b.dataset.c)})});
-show('yellow');
-function picked(){var r=document.querySelector('input[name=rw]:checked');return r?r.value:'풀 세트 · 25,000원'}
-var dlg=document.getElementById('buy'),form=document.getElementById('buy-form'),done=document.getElementById('buy-done');
-var err=document.getElementById('buy-err'),sub=document.getElementById('buy-submit');
-function openBuy(){
-document.getElementById('buy-pick').textContent=picked();
-form.hidden=false;done.hidden=true;err.textContent='';sub.disabled=false;sub.textContent='문의 남기기';
-if(dlg.showModal)dlg.showModal();else dlg.setAttribute('open','');
-setTimeout(function(){document.getElementById('buy-name').focus()},30);
-}
-function closeBuy(){if(dlg.close)dlg.close();else dlg.removeAttribute('open')}
-document.querySelectorAll('[data-buy]').forEach(function(b){b.addEventListener('click',openBuy)});
-document.getElementById('buy-close').addEventListener('click',closeBuy);
-document.getElementById('buy-ok').addEventListener('click',closeBuy);
-dlg.addEventListener('click',function(e){if(e.target===dlg)closeBuy()});
-var SB_URL='https://bqbdxjvzrvkpahmoelst.supabase.co/rest/v1/purchase_inquiries';
-var SB_KEY='sb_publishable_5-HdO_Koz_ILYcalBuBoWQ_2M30Hzqn';
-form.addEventListener('submit',async function(e){
-e.preventDefault();
-var name=document.getElementById('buy-name').value.trim();
-var phone=document.getElementById('buy-phone').value.trim();
-var digits=phone.replace(/[^0-9]/g,'');
-if(!name){err.textContent='이름을 적어주세요.';return}
-if(digits.length<9||digits.length>12){err.textContent='전화번호를 숫자로 정확히 적어주세요. 예: 010-1234-5678';return}
-err.textContent='';sub.disabled=true;sub.textContent='보내는 중…';
-try{
-var r=await fetch(SB_URL,{method:'POST',headers:{'apikey':SB_KEY,'Content-Type':'application/json','Prefer':'return=minimal'},body:JSON.stringify({name:name.slice(0,40),phone:digits,option:picked()})});
-if(!r.ok)throw new Error('http '+r.status);
-form.hidden=true;done.hidden=false;form.reset();
-}catch(x){
-sub.disabled=false;sub.textContent='문의 남기기';
-err.textContent='문의를 보내지 못했어요. 잠시 후 다시 시도해 주세요.';
-}
-});
 var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+// marquee: repeat the character set so each half is wider than any screen
+var tr=document.querySelector('.track');
+if(tr){var set=Array.prototype.slice.call(tr.children);for(var k=0;k<5;k++){set.forEach(function(n){tr.appendChild(n.cloneNode(true))})}}
+// sticky phone swap: the step whose center is closest to the phone's center is active;
+// text opacity follows its distance from that center
+var shots=document.querySelectorAll('.flow-left .phone img');
+var steps=Array.prototype.slice.call(document.querySelectorAll('.fstep'));
+var phone=document.querySelector('.flow-left .phone');
+var wide=window.matchMedia('(min-width: 861px)');
+var current=null,ticking=false;
+function update(){
+ticking=false;
+if(!wide.matches){steps.forEach(function(s){s.style.opacity=''});return}
+var pr=phone.getBoundingClientRect(),cy=pr.top+pr.height/2,vh=window.innerHeight,full=vh*0.1,fade=vh*0.38;
+var best=null,bestD=Infinity;
+steps.forEach(function(s){
+var r=s.getBoundingClientRect(),d=Math.abs(r.top+r.height/2-cy);
+if(d<bestD){bestD=d;best=s}
+s.style.opacity=(d<=full?1:Math.max(.22,1-.78*(d-full)/(fade-full))).toFixed(3);
+});
+var i=best?best.dataset.i:'0';
+if(i!==current){
+current=i;
+shots.forEach(function(x){x.classList.toggle('on',x.dataset.i===i)});
+steps.forEach(function(x){x.classList.toggle('on',x.dataset.i===i)});
+}
+}
+function onScroll(){if(!ticking){ticking=true;requestAnimationFrame(update)}}
+window.addEventListener('scroll',onScroll,{passive:true});
+window.addEventListener('resize',onScroll);
+update();
+// shape explorer
+var S={
+pos:['a/ob0.svg','긍정 · 동그란 몸','둥글게 흘러가는 생각은 동그란 몸이 돼요.'],
+neg:['a/ob1.svg','부정 · 뾰족한 몸','부정적인 생각은 뾰족한 형태로 표현해요. 복잡해 보이지 않도록 팔만 남기기도 해요.'],
+neu:['a/ob2.svg','중립 · 네모난 몸','어느 쪽으로도 기울지 않은 생각은 반듯한 네모가 돼요.'],
+unc:['a/ob3.svg','불확실 · 몽글몽글한 몸','아직 모양이 잡히지 않은 생각은 구름처럼 몽글몽글해요.'],
+avo:['a/ob4.svg','회피 · 구겨진 몸','마주하고 싶지 않았던 생각은 구겨진 종이 같은 모양이 돼요.']
+};
+var img=document.getElementById('ex-img'),t=document.getElementById('ex-title'),d=document.getElementById('ex-desc');
+document.querySelectorAll('.shapes button').forEach(function(b){
+b.addEventListener('click',function(){
+var v=S[b.dataset.s];img.src=v[0];t.textContent=v[1];d.textContent=v[2];
+document.querySelectorAll('.shapes button').forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false')});
+});
+});
+// notify
+document.getElementById('notify').addEventListener('click',function(){
+var m=document.getElementById('notify-msg');
+m.innerHTML='';
+m.append('아직 출시 전이라 알림 신청을 받을 곳이 준비 중이에요. 그동안 ');
+var a=document.createElement('a');a.href='goods/';a.textContent='굿즈 구매 페이지';
+m.append(a);m.append('에서 먼저 만나보세요.');
+});
+// line boil
 var noise=document.getElementById('boil-noise');
 if(noise&&!reduce){var s=1;setInterval(function(){s=s%3+1;noise.setAttribute('seed',s)},170)}
 })();
